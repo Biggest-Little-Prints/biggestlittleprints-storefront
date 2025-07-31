@@ -3,9 +3,9 @@
 import { addToCart } from "@lib/data/cart"
 import { useIntersection } from "@lib/hooks/use-in-view"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
 import Divider from "@modules/common/components/divider"
 import OptionSelect from "@modules/products/components/product-actions/option-select"
+import ButtonWrapper from "@modules/layout/components/button-wrapper"
 import { isEqual } from "lodash"
 import { useParams } from "next/navigation"
 import { useEffect, useMemo, useRef, useState } from "react"
@@ -140,7 +140,7 @@ export default function ProductActions({
 
         <ProductPrice product={product} variant={selectedVariant} />
 
-        <Button
+        <ButtonWrapper
           onClick={handleAddToCart}
           disabled={
             !inStock ||
@@ -159,7 +159,7 @@ export default function ProductActions({
             : !inStock || !isValidVariant
             ? "Out of stock"
             : "Add to cart"}
-        </Button>
+        </ButtonWrapper>
         <MobileActions
           product={product}
           variant={selectedVariant}

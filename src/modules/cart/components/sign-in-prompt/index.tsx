@@ -1,5 +1,6 @@
-import { Button, Heading, Text } from "@medusajs/ui"
+import { Heading, Text } from "@medusajs/ui"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import ButtonWrapper from "@modules/layout/components/button-wrapper"
 
 const SignInPrompt = () => {
   return (
@@ -14,9 +15,9 @@ const SignInPrompt = () => {
       </div>
       <div>
         <LocalizedClientLink href="/account">
-          <Button variant="secondary" className="h-10" data-testid="sign-in-button">
+          <ButtonWrapper variant="secondary" className="h-10" data-testid="sign-in-button">
             Sign in
-          </Button>
+          </ButtonWrapper>
         </LocalizedClientLink>
       </div>
     </div>

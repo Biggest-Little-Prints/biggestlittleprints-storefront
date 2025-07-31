@@ -1,10 +1,13 @@
-import { ArrowLongRight } from "@medusajs/icons"
 import { Button, Heading } from "@medusajs/ui"
+import { ArrowLongRight } from "@medusajs/icons"
+import ButtonWrapper from "@modules/layout/components/button-wrapper"
 
 const Hero = () => {
   return (
-    <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
-      <div className="absolute inset-0 z-0">
+    <div
+      className="relative w-full h-[600px] overflow-hidden"
+    >
+      <div className="absolute inset-0">
         <video
           className="w-full h-full object-cover"
           autoPlay
@@ -19,7 +22,6 @@ const Hero = () => {
         </video>
       </div>
 
-      {/* Tint Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10"></div>
 
       <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
@@ -44,10 +46,10 @@ const Hero = () => {
         <a
           href="/store"
         >
-          <Button variant="secondary" className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2  shadow-lg hover:shadow-xl transition-all">
+          <ButtonWrapper variant="secondary">
             View Products
             <ArrowLongRight />
-          </Button>
+          </ButtonWrapper>
         </a>
       </div>
     </div>

@@ -3,7 +3,7 @@
 import { isManual, isStripe } from "@lib/constants"
 import { placeOrder } from "@lib/data/cart"
 import { HttpTypes } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
+import ButtonWrapper from "@modules/layout/components/button-wrapper"
 import { useElements, useStripe } from "@stripe/react-stripe-js"
 import React, { useState } from "react"
 import ErrorMessage from "../error-message"
@@ -40,7 +40,7 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({
         <ManualTestPaymentButton notReady={notReady} data-testid={dataTestId} />
       )
     default:
-      return <Button disabled>Select a payment method</Button>
+      return <ButtonWrapper disabled>Select a payment method</ButtonWrapper>
   }
 }
 
@@ -134,7 +134,7 @@ const StripePaymentButton = ({
 
   return (
     <>
-      <Button
+      <ButtonWrapper
         disabled={disabled || notReady}
         onClick={handlePayment}
         size="large"
@@ -142,7 +142,7 @@ const StripePaymentButton = ({
         data-testid={dataTestId}
       >
         Place order
-      </Button>
+      </ButtonWrapper>
       <ErrorMessage
         error={errorMessage}
         data-testid="stripe-payment-error-message"
@@ -173,7 +173,7 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
 
   return (
     <>
-      <Button
+      <ButtonWrapper
         disabled={notReady}
         isLoading={submitting}
         onClick={handlePayment}
@@ -181,7 +181,7 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
         data-testid="submit-order-button"
       >
         Place order
-      </Button>
+      </ButtonWrapper>
       <ErrorMessage
         error={errorMessage}
         data-testid="manual-payment-error-message"

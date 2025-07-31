@@ -1,11 +1,12 @@
 "use client"
 
-import { Button, Heading } from "@medusajs/ui"
+import { Heading } from "@medusajs/ui"
 
 import CartTotals from "@modules/common/components/cart-totals"
 import Divider from "@modules/common/components/divider"
 import DiscountCode from "@modules/checkout/components/discount-code"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import ButtonWrapper from "@modules/layout/components/button-wrapper"
 import { HttpTypes } from "@medusajs/types"
 
 type SummaryProps = {
@@ -39,7 +40,7 @@ const Summary = ({ cart }: SummaryProps) => {
         href={"/checkout?step=" + step}
         data-testid="checkout-button"
       >
-        <Button className="w-full h-10">Go to checkout</Button>
+        <ButtonWrapper className="w-full h-10">Go to checkout</ButtonWrapper>
       </LocalizedClientLink>
     </div>
   )

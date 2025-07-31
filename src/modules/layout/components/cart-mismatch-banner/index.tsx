@@ -3,7 +3,7 @@
 import { transferCart } from "@lib/data/customer"
 import { ExclamationCircleSolid } from "@medusajs/icons"
 import { StoreCart, StoreCustomer } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
+import ButtonWrapper from "@modules/layout/components/button-wrapper"
 import { useState } from "react"
 
 function CartMismatchBanner(props: {
@@ -40,7 +40,7 @@ function CartMismatchBanner(props: {
 
         <span>·</span>
 
-        <Button
+        <ButtonWrapper
           variant="transparent"
           className="hover:bg-transparent active:bg-transparent focus:bg-transparent disabled:text-orange-500 text-orange-950 p-0 bg-transparent"
           size="base"
@@ -48,7 +48,7 @@ function CartMismatchBanner(props: {
           onClick={handleSubmit}
         >
           {actionText}
-        </Button>
+        </ButtonWrapper>
       </div>
     </div>
   )

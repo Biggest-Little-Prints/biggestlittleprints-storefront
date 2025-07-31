@@ -1,7 +1,7 @@
 "use client"
 
 import { Plus } from "@medusajs/icons"
-import { Button, Heading } from "@medusajs/ui"
+import { Heading } from "@medusajs/ui"
 import { useEffect, useState, useActionState } from "react"
 
 import useToggleState from "@lib/hooks/use-toggle-state"
@@ -9,6 +9,7 @@ import CountrySelect from "@modules/checkout/components/country-select"
 import Input from "@modules/common/components/input"
 import Modal from "@modules/common/components/modal"
 import { SubmitButton } from "@modules/checkout/components/submit-button"
+import ButtonWrapper from "@modules/layout/components/button-wrapper"
 import { HttpTypes } from "@medusajs/types"
 import { addCustomerAddress } from "@lib/data/customer"
 
@@ -146,7 +147,7 @@ const AddAddress = ({
           </Modal.Body>
           <Modal.Footer>
             <div className="flex gap-3 mt-6">
-              <Button
+              <ButtonWrapper
                 type="reset"
                 variant="secondary"
                 onClick={close}
@@ -154,7 +155,7 @@ const AddAddress = ({
                 data-testid="cancel-button"
               >
                 Cancel
-              </Button>
+              </ButtonWrapper>
               <SubmitButton data-testid="save-button">Save</SubmitButton>
             </div>
           </Modal.Footer>

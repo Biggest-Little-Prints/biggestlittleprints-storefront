@@ -1,8 +1,8 @@
-import { Button } from "@medusajs/ui"
 import { useMemo } from "react"
 
 import Thumbnail from "@modules/products/components/thumbnail"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import ButtonWrapper from "@modules/layout/components/button-wrapper"
 import { convertToLocale } from "@lib/util/money"
 import { HttpTypes } from "@medusajs/types"
 
@@ -75,9 +75,9 @@ const OrderCard = ({ order }: OrderCardProps) => {
       </div>
       <div className="flex justify-end">
         <LocalizedClientLink href={`/account/orders/details/${order.id}`}>
-          <Button data-testid="order-details-link" variant="secondary">
+          <ButtonWrapper data-testid="order-details-link" variant="secondary">
             See details
-          </Button>
+          </ButtonWrapper>
         </LocalizedClientLink>
       </div>
     </div>
